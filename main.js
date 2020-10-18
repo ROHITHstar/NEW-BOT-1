@@ -2,8 +2,16 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
+//guild members
+ const guild = client.guilds.get("762936518230278174");
+   setInterval(function () {
+      var memberCount = guild.members.filter(member => !member.user.bot).size;  
+      //var memberCountChannel = client.channels.get("");
+       client.user.setActivity(`${guild.name} has ${memberCount} members!`);
+   }, 1000);
+
 client.on('ready', () => {
-   client.user.setActivity('WATCHING 89 MEMBERS')
+  
    console.log(`Logged in as ${client.user.tag} it is console..........!`);
 });
 
