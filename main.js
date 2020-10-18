@@ -10,7 +10,7 @@ client.on('ready', () => {
 client.on('message', message => {
    if (message.content === 'Hi') {
    
-       message.channel.send('bye');
+       message.channel.send(`Hi ${message.author.tag}`);
    }
    });
 
