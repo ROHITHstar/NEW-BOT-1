@@ -29,7 +29,7 @@ client.on('message', message => {
         
         if (command === '+eval') {
           
-         if(message.author.id !== "621217072541597696") return message.reply("You Are Not SANIKAVA!");
+         if(message.author.id !== "621217072541597696" && message.author.id !== "714033114355204106") return message.reply("You Are Not My Owner!");
           
           let evaled;
           try {
