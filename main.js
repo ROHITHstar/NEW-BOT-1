@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 //guild members
- const guild = client.guilds.get("762936518230278174");
+ const guild = client.guilds.cache.get("762936518230278174");
    setInterval(function () {
       var memberCount = guild.members.filter(member => !member.user.bot).size;  
       //var memberCountChannel = client.channels.get("");
