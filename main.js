@@ -11,7 +11,7 @@ const client = new Discord.Client();
    }, 1000);
 */
 client.on('ready', () => {
-  client.setActivity(`with ${client.users.cache.size} members`)
+  client.user.setActivity(`with ${client.users.cache.size} members`)
    console.log(`Logged in as ${client.user.tag} it is console..........!`);
 });
 
