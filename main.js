@@ -44,34 +44,22 @@ client.on('message', message => {
         }
       });
 
+let prefix = ("+");
+client.on("message", async message => {
+  // and not get into a spam loop (we call that "botception").
+  if(message.author.bot) return;
+  // which is set in the configuration file.
+  if(!message.content.startsWith(prefix)) return;
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
 
-
-
-client.on('message', message => {
-   if (message.content === '+say') {
-   
- const args = message.content.split(' ');
-        const command = args.shift().toLowerCase();
-        message.delete();
-
-        if (!message.member.hasPermission("MANAGE_MESSAGES"))
-            return message.reply("You don't have the required permissions to use this command.").then(m => m.delete(5000));
-
-        if (args.length < 0)
-            return message.reply("Nothing to say?").then(m => m.delete(5000));
-
-        
-
-        if (args[0].toLowerCase() === "announce") {
-            const embed = new MessageEmbed()
-                .setTitle("Announcement ")
-                .setDescription(`${args.slice(1).join(" ")}`)
-                .setColor("#00ff00");
-
-            message.channel.send(embed);
-        } else {
-            message.channel.send(args.join(" "));
-        }
-}})
+  if(command === "say") {
+    // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
+    // To get the "message" itself we join the `args` back into a string with spaces: 
+    const sayMessage = args.join(" ");
+    message.delete().catch(O_o=>{}); 
+    // And we get the bot to say the thing: 
+    message.channel.send(sayMessage);
+  }
 
 client.login(process.env.token);
