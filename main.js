@@ -5,7 +5,7 @@ const client = new Discord.Client();
 //guild members
  const guild = client.guilds.cache.get("762936518230278174");
    setInterval(function () {
-      var memberCount = guild..memberCount();
+      var memberCount = guild.memberCount();
       //var memberCountChannel = client.channels.get("");
        client.user.setActivity(`${guild.name} has ${memberCount} members!`);
    }, 1000);
