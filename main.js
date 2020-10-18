@@ -47,8 +47,9 @@ client.on('message', message => {
 
 
 
-client.on('message',message => {
-if (message.content === '+say'){
+client.on('message', message => {
+   if (message.content === '+say') {
+   
  const args = message.content.split(' ');
         const command = args.shift().toLowerCase();
         message.delete();
