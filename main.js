@@ -61,5 +61,6 @@ client.on("message", async message => {
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   }
+});
 
 client.login(process.env.token);
