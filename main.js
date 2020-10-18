@@ -71,4 +71,6 @@ if (message.content === '+say'){
         } else {
             message.channel.send(args.join(" "));
         }
+}})
+
 client.login(process.env.token);
