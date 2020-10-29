@@ -3,9 +3,10 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-  client.user.setActivity(`with ${client.users.cache.size} members`)
-   console.log(`Logged in as ${client.user.tag} it is console..........!`);
-});
+		console.log(`${client.user.tag} is now active!`)
+	  
+		client.user.setActivity('GTP', ({type: "WATCHING"}))
+	  })
 
 client.on('message', message => {
    if (message.content === 'Hi') {
