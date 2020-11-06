@@ -5,7 +5,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
 		console.log(`${client.user.tag} is now active!`)
 	  
-		client.user.setActivity('MEMBERS OF VKO', ({type: "WATCHING"}))
+		client.user.setActivity('MEMBERS OF VIC', ({type: "WATCHING"}))
 	  })
 
 
